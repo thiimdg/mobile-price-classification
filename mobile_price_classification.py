@@ -48,11 +48,11 @@ class MobilePriceClassifier:
         print(f"Shape: {self.train_data.shape}")
         print(f"Colunas: {list(self.train_data.columns)}")
         
-        # Verificar se tem valores nulos
+        # Verificar se tem valores nulos OBS: é esperado que o dataset não possua valores nulos, essa função serve apenas para confirmar isso
         if self.train_data.isnull().sum().sum() > 0:
-            print("Atenção: Existem valores nulos nos dados")
+            print("Existem valores nulos nos dados")
         else:
-            print("OK: Nenhum valor nulo encontrado")
+            print("Nenhum valor nulo encontrado")
         
         # Distribuição do target
         print("\nDistribuição das classes:")
@@ -69,7 +69,7 @@ class MobilePriceClassifier:
             X, y, test_size=0.2, random_state=42, stratify=y
         )
         
-        # Normalizar os dados
+        # Normalizaçao os dados
         self.X_train_scaled = self.scaler.fit_transform(self.X_train)
         self.X_val_scaled = self.scaler.transform(self.X_val)
         
@@ -77,7 +77,6 @@ class MobilePriceClassifier:
     
     def train_models(self):
         """Treina diferentes modelos"""
-        print("\n=== Treinando Modelos ===")
         
         # Definir os modelos
         models = {
@@ -90,9 +89,8 @@ class MobilePriceClassifier:
         
         # Treinar cada modelo
         for name, model in models.items():
-            print(f"Treinando {name}...")
+            print(f"Treinando {name}")
             
-            # Treinar
             if name in ['Logistic Regression', 'SVM']:
                 model.fit(self.X_train_scaled, self.y_train)
                 predictions = model.predict(self.X_val_scaled)
@@ -109,7 +107,6 @@ class MobilePriceClassifier:
             else:
                 cv_scores = cross_val_score(model, self.X_train, self.y_train, cv=5)
             
-            # Salvar resultados
             self.models[name] = model
             self.results[name] = {
                 'accuracy': accuracy,
@@ -137,7 +134,6 @@ class MobilePriceClassifier:
         print(f"\nMelhor modelo: {self.best_model_name}")
         print(f"Acurácia: {results_df.loc[self.best_model_name, 'accuracy']:.4f}")
         
-        # Relatório detalhado do melhor modelo
         if self.best_model_name in ['Logistic Regression', 'SVM']:
             best_predictions = self.best_model.predict(self.X_val_scaled)
         else:
@@ -168,7 +164,6 @@ class MobilePriceClassifier:
         submission.to_csv('predictions.csv', index=False)
         print("Predições salvas em 'predictions.csv'")
         
-        # Mostrar distribuição das predições
         print("Distribuição das predições:")
         print(pd.Series(predictions).value_counts().sort_index())
     
@@ -215,12 +210,8 @@ class MobilePriceClassifier:
         plt.show()
 
 def main():
-    # Criar o classificador
     classifier = MobilePriceClassifier()
     
-    print("=== CLASSIFICAÇÃO DE PREÇOS DE CELULARES ===")
-    
-    # Executar o pipeline
     if not classifier.load_data():
         return
     
@@ -231,7 +222,7 @@ def main():
     classifier.make_predictions()
     classifier.create_simple_visualization()
     
-    print("\nAnálise concluída com sucesso!")
+    print("\nAnálise finalizada")
 
 if __name__ == "__main__":
     main() 
