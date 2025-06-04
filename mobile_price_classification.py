@@ -48,7 +48,7 @@ class MobilePriceClassifier:
         print(f"Shape: {self.train_data.shape}")
         print(f"Colunas: {list(self.train_data.columns)}")
         
-        # Verificar se tem valores nulos OBS: é esperado que o dataset não possua valores nulos, essa função serve apenas para confirmar isso
+        # Verificar se tem valores nulos OBS: é esperado que o dataset não possua valores nulos, esse código serve apenas para confirmar isso
         if self.train_data.isnull().sum().sum() > 0:
             print("Existem valores nulos nos dados")
         else:
