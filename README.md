@@ -10,6 +10,8 @@ Este projeto classifica celulares em 4 faixas de preço baseado nas suas especif
 - **Classe 2**: Alto custo
 - **Classe 3**: Muito alto custo
 
+**Observação** - é esperado que o dataset não possua valores nulos, o código que verifica serve apenas para confirmação
+
 ## Dataset
 
 O dataset contém informações de 2000 celulares para treino e 1000 para teste, com as seguintes características:
