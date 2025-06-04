@@ -80,11 +80,13 @@ O projeto alcança até **96.5% de acurácia** usando Logistic Regression.
 
 ## Estrutura do Projeto
 
+```
 ├── train.csv              # Dados de treino
 ├── test.csv               # Dados de teste
 ├── mobile_price_classification.py  # Script principal
 ├── README.md              # Este arquivo
 └── requirements.txt       # Dependências
+```
 
 ## Próximos Passos
 
