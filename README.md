@@ -106,13 +106,12 @@ O projeto alcança até **96.5% de acurácia** usando Logistic Regression.
 
 - Testar ensemble de modelos
 - Adicionar mais features engineered
-- Experimentar com deep learning
 - Otimizar hiperparâmetros
 
 ## Autor
 
-Projeto desenvolvido para demonstrar técnicas de Machine Learning em classificação.
+Projeto desenvolvido por Thiago Dias e Gabriel Lopes para resolver um problema de classificação.
 
 ---
 
-**Nota**: Este é um projeto educacional baseado em dados do Kaggle. 
+**Nota**: Este é um projeto baseado em dados do Kaggle. 
