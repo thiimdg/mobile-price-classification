@@ -80,27 +80,11 @@ O projeto alcança até **96.5% de acurácia** usando Logistic Regression.
 
 ## Estrutura do Projeto
 
-```
 ├── train.csv              # Dados de treino
 ├── test.csv               # Dados de teste
 ├── mobile_price_classification.py  # Script principal
 ├── README.md              # Este arquivo
 └── requirements.txt       # Dependências
-```
-
-## Metodologia
-
-1. **Análise Exploratória**: Verificação dos dados e distribuições
-2. **Modelagem**: Teste de múltiplos algoritmos
-3. **Avaliação**: Comparação usando acurácia e cross-validation
-4. **Predição**: Aplicação no conjunto de teste
-
-## Insights do Projeto
-
-- RAM é o fator mais importante para determinar o preço
-- Celulares com mais memória tendem a ser mais caros
-- A resolução da tela também impacta significativamente no preço
-- Features de conectividade (4G, WiFi) são menos importantes
 
 ## Próximos Passos
 
@@ -108,10 +92,7 @@ O projeto alcança até **96.5% de acurácia** usando Logistic Regression.
 - Adicionar mais features engineered
 - Otimizar hiperparâmetros
 
-## Autor
+## Autores
 
 Projeto desenvolvido por Thiago Dias e Gabriel Lopes para resolver um problema de classificação.
 
----
-
-**Nota**: Este é um projeto baseado em dados do Kaggle. 
